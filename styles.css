@@ -1,7 +1,11 @@
-dd, dt {
-	float: left;
+dl {
+  padding: 1em;
 }
-
 dt {
-	font-weight: bolder;
+  font-weight: bolder;
+  border-top: 1px solid grey;
+  padding-top: 1em;
+}
+dd {
+  margin-bottom: 1em;
 }
