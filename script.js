@@ -100,3 +100,26 @@ function whatIsInAName(collection, source) {
 
 // Test whatIsInAName()
 //console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+
+
+/*********************************************************************	
+	SEARCH AND REPLACE
+**********************************************************************/
+function myReplace(str, before, after) {
+	// Capitalize after if before is capitalized
+	var index = str.indexOf(before);
+	if(str[index] === str[index].toUpperCase()) {
+		after = after.charAt(0).toUpperCase() + after.slice(1);
+	}
+	// Replace before with after
+	str = str.replace(before, after);
+	return str;
+}
+
+// Test myReplace()
+console.log("myReplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\", \"leaped\") = " + myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+console.log("myReplace(\"Let us go to the store\", \"store\", \"mall\") = " + myReplace("Let us go to the store", "store", "mall"));
+console.log("myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\") = " + myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
+console.log("myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\") = " + myReplace("This has a spellngi error", "spellngi", "spelling"));
+console.log("myReplace(\"His name is Tom\", \"Tom\", \"john\")  = " + myReplace("His name is Tom", "Tom", "john"));
+console.log("myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\") = " + myReplace("Let us get back to more Coding", "Coding", "algorithms"));
