@@ -4,6 +4,7 @@
 function sumAll(arr) {
 	const min = Math.min(...arr);
 	const max = Math.max(...arr);
+	// Arithmetic Progression sum formula
 	return (((max - min + 1) * (min + max)) / (2));
 }
 
@@ -80,3 +81,22 @@ console.log("convertToRoman(1006) = " + convertToRoman(1006));
 console.log("convertToRoman(1023) = " + convertToRoman(1023));
 console.log("convertToRoman(2014) = " + convertToRoman(2014));
 console.log("convertToRoman(3999) = " + convertToRoman(3999));
+
+/*********************************************************************	
+	WHEREFORE ART THOU
+**********************************************************************/
+// Look through an array of objects (collection)
+// Return array of all objects that have matching property/value pairs (source)
+function whatIsInAName(collection, source) {
+  return collection.filter(function(obj) {
+  	for(var prop in source) {
+  		if(!obj.hasOwnProperty(prop) || obj[prop] !== source[prop]) {
+  			return false;
+  		}
+  	}
+  	return true;
+  });
+}
+
+// Test whatIsInAName()
+//console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
