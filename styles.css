@@ -1,3 +1,7 @@
+body {
+	background: #F5F5F5;
+	color: #050505;
+}
 dt {
   font-weight: bolder;
   border-top: 1px solid grey;
