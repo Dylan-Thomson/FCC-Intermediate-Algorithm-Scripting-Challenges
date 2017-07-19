@@ -160,3 +160,23 @@ console.log("translatePigLatin(\"paragraphs\") = " + translatePigLatin("paragrap
 console.log("translatePigLatin(\"glove\") = " + translatePigLatin("glove"));
 console.log("translatePigLatin(\"algorithm\") = " + translatePigLatin("algorithm"));
 console.log("translatePigLatin(\"eight\") = " + translatePigLatin("eight"));
+
+/*********************************************************************	
+	DNA PAIRING
+**********************************************************************/
+function pairElement(str) {
+	// Map pairs
+	var pair = {T: "A", A: "T", G: "C", C: "G"};
+	str = str.split("");
+
+	for(var i = 0; i < str.length; i++) {
+		str[i] = [str[i], pair[str[i]]];
+	}
+	return str;
+}
+
+// Test pairElement()
+console.log("pairElement(\"GCG\") = "); console.log(pairElement("GCG"));
+console.log("pairElement(\"ATCGA\") = "); console.log(pairElement("ATCGA"));
+console.log("pairElement(\"TTGAG\") = ");  console.log(pairElement("TTGAG"));
+console.log("pairElement(\"CTCTA\") = ");  console.log(pairElement("CTCTA"));
