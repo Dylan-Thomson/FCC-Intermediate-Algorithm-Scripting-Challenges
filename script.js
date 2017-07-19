@@ -136,3 +136,27 @@ console.log("myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\
 console.log("myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\") = " + myReplace("This has a spellngi error", "spellngi", "spelling"));
 console.log("myReplace(\"His name is Tom\", \"Tom\", \"john\")  = " + myReplace("His name is Tom", "Tom", "john"));
 console.log("myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\") = " + myReplace("Let us get back to more Coding", "Coding", "algorithms"));
+/*********************************************************************	
+	PIG LATIN
+**********************************************************************/
+function translatePigLatin(str) {
+	var vowels = /[aeiou]/gi;
+	// If word begins with vowel just concat "way"
+	if(str[0].match(vowels)) {
+		str += "way";
+	}
+	else {
+		// Get index of first vowel
+		var firstVowelIndex = str.indexOf(str.match(vowels)[0]);
+		// Move consonants before first vowel to end, add "ay"
+		str = str.substr(firstVowelIndex) + str.substr(0, firstVowelIndex) + "ay";
+	}
+  return str;
+}
+
+// Test translatePigLatin()
+console.log("translatePigLatin(\"consonant\") = " + translatePigLatin("consonant"));
+console.log("translatePigLatin(\"paragraphs\") = " + translatePigLatin("paragraphs"));
+console.log("translatePigLatin(\"glove\") = " + translatePigLatin("glove"));
+console.log("translatePigLatin(\"algorithm\") = " + translatePigLatin("algorithm"));
+console.log("translatePigLatin(\"eight\") = " + translatePigLatin("eight"));
