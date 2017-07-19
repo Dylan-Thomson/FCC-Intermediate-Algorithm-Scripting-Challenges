@@ -167,12 +167,9 @@ console.log("translatePigLatin(\"eight\") = " + translatePigLatin("eight"));
 function pairElement(str) {
 	// Map pairs
 	var pair = {T: "A", A: "T", G: "C", C: "G"};
-	str = str.split("");
-
-	for(var i = 0; i < str.length; i++) {
-		str[i] = [str[i], pair[str[i]]];
-	}
-	return str;
+	return str.split("").map(function(char) {
+		return [char, pair[char]];
+	});
 }
 
 // Test pairElement()
