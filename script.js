@@ -19,24 +19,24 @@ console.log("sumAll([10, 5]) = " + sumAll([10, 5]));
 **********************************************************************/
 function diffArray(arr1, arr2) {
 	// Merge arrays, filter merged array by removing items that appear in both arrays
-  return arr1.concat(arr2).filter(function(item) {
-  	if(!arr1.includes(item) || !arr2.includes(item)) {
-  		return item;
-  	}
-  });
+	return arr1.concat(arr2).filter(function(item) {
+		if(!arr1.includes(item) || !arr2.includes(item)) {
+			return item;
+		}
+	});
 }
 
 // Test diffArray Output
-console.log("diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) = " +  diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+console.log("diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) = " +	diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 console.log("diffArray([\"diorite\", \"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]) = " 
-						+  diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+						+ diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
 console.log("diffArray([\"andesite\", \"grass\", \"dirt\", \"pink wool\", \"dead shrub\"], [\"diorite\", \"andesite\", \"grass\", \"dirt\", \"dead shrub\"]) = " 
-						+  diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+						+ diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
 console.log("diffArray([\"andesite\", \"grass\", \"dirt\", \"dead shrub\"], [\"andesite\", \"grass\", \"dirt\", \"dead shrub\"]) = " 
-						+  diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]));
-console.log("diffArray([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]) = " +  diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]));
-console.log("diffArray([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]) = " +  diffArray([], ["snuffleupagus", "cookie monster", "elmo"]));
-console.log("diffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]) = " +  diffArray([1, "calf", 3, "piglet"], [7, "filly"]));
+						+ diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]));
+console.log("diffArray([1, \"calf\", 3, \"piglet\"], [1, \"calf\", 3, 4]) = " +	diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]));
+console.log("diffArray([], [\"snuffleupagus\", \"cookie monster\", \"elmo\"]) = " +	diffArray([], ["snuffleupagus", "cookie monster", "elmo"]));
+console.log("diffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]) = " +	diffArray([1, "calf", 3, "piglet"], [7, "filly"]));
 
 /*********************************************************************	
 	ROMAN NUMERAL CONVERTER
@@ -88,14 +88,14 @@ console.log("convertToRoman(3999) = " + convertToRoman(3999));
 // Look through an array of objects (collection)
 // Return array of all objects that have matching property/value pairs (source)
 function whatIsInAName(collection, source) {
-  return collection.filter(function(obj) {
-  	for(var prop in source) {
-  		if(!obj.hasOwnProperty(prop) || obj[prop] !== source[prop]) {
-  			return false;
-  		}
-  	}
-  	return true;
-  });
+	return collection.filter(function(obj) {
+		for(var prop in source) {
+			if(!obj.hasOwnProperty(prop) || obj[prop] !== source[prop]) {
+				return false;
+			}
+		}
+		return true;
+	});
 }
 
 // Test whatIsInAName()
@@ -103,7 +103,7 @@ console.log("whatIsInAName([{ first: \"Romeo\", last: \"Montague\" }, { first: \
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }).forEach(function(obj) {
 	console.log(obj);
 });
-console.log("whatIsInAName([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 })  = " );
+console.log("whatIsInAName([{ \"a\": 1 }, { \"a\": 1 }, { \"a\": 1, \"b\": 2 }], { \"a\": 1 })	= " );
 whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 }).forEach(function(obj) {
 	console.log(obj);
 });
@@ -134,7 +134,7 @@ console.log("myReplace(\"A quick brown fox jumped over the lazy dog\", \"jumped\
 console.log("myReplace(\"Let us go to the store\", \"store\", \"mall\") = " + myReplace("Let us go to the store", "store", "mall"));
 console.log("myReplace(\"He is Sleeping on the couch\", \"Sleeping\", \"sitting\") = " + myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
 console.log("myReplace(\"This has a spellngi error\", \"spellngi\", \"spelling\") = " + myReplace("This has a spellngi error", "spellngi", "spelling"));
-console.log("myReplace(\"His name is Tom\", \"Tom\", \"john\")  = " + myReplace("His name is Tom", "Tom", "john"));
+console.log("myReplace(\"His name is Tom\", \"Tom\", \"john\")	= " + myReplace("His name is Tom", "Tom", "john"));
 console.log("myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\") = " + myReplace("Let us get back to more Coding", "Coding", "algorithms"));
 /*********************************************************************	
 	PIG LATIN
@@ -151,7 +151,7 @@ function translatePigLatin(str) {
 		// Move consonants before first vowel to end, add "ay"
 		str = str.substr(firstVowelIndex) + str.substr(0, firstVowelIndex) + "ay";
 	}
-  return str;
+	return str;
 }
 
 // Test translatePigLatin()
@@ -175,8 +175,8 @@ function pairElement(str) {
 // Test pairElement()
 console.log("pairElement(\"GCG\") = "); console.log(pairElement("GCG"));
 console.log("pairElement(\"ATCGA\") = "); console.log(pairElement("ATCGA"));
-console.log("pairElement(\"TTGAG\") = ");  console.log(pairElement("TTGAG"));
-console.log("pairElement(\"CTCTA\") = ");  console.log(pairElement("CTCTA"));
+console.log("pairElement(\"TTGAG\") = ");	console.log(pairElement("TTGAG"));
+console.log("pairElement(\"CTCTA\") = ");	console.log(pairElement("CTCTA"));
 
 
 /*********************************************************************	
@@ -189,7 +189,7 @@ function fearNotLetter(str) {
 			return String.fromCharCode(str[i-1].charCodeAt(0) + 1);
 		}
 	}
-  return undefined;
+	return undefined;
 }
 
 // Test fearNotLetter()
@@ -233,7 +233,7 @@ function uniteUnique(arr) {
 }
 
 // Test uniteUnique()
-console.log("uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) = ");  console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
-console.log("uniteUnique([1, 3, 2], [1, [5]], [2, [4]]) = ");  console.log(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]));
-console.log("uniteUnique([1, 2, 3], [5, 2, 1]) = ");  console.log(uniteUnique([1, 2, 3], [5, 2, 1]));
-console.log("uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) = ");  console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]));
+console.log("uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) = "); console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+console.log("uniteUnique([1, 3, 2], [1, [5]], [2, [4]]) = "); console.log(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]));
+console.log("uniteUnique([1, 2, 3], [5, 2, 1]) = "); console.log(uniteUnique([1, 2, 3], [5, 2, 1]));
+console.log("uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) = "); console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]));
