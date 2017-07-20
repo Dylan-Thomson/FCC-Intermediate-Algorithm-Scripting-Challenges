@@ -218,3 +218,22 @@ console.log("booWho(\"a\") = " + booWho("a"));
 console.log("booWho(\"true\") = " + booWho("true"));
 console.log("booWho(\"false\") = " + booWho("false"));
 
+
+/*********************************************************************	
+	SORTED UNION
+**********************************************************************/
+function uniteUnique(arr) {
+	// Turn arguments into array and reduce it
+	return Array.from(arguments).reduce(function(a, b) {
+		// Filter out elements in b that are already in a, then concat with a
+		return a.concat(b.filter(function(index) {
+			return a.indexOf(index) === -1;
+		}));
+	});
+}
+
+// Test uniteUnique()
+console.log("uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) = ");  console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+console.log("uniteUnique([1, 3, 2], [1, [5]], [2, [4]]) = ");  console.log(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]));
+console.log("uniteUnique([1, 2, 3], [5, 2, 1]) = ");  console.log(uniteUnique([1, 2, 3], [5, 2, 1]));
+console.log("uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) = ");  console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]));
