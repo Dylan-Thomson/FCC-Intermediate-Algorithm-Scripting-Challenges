@@ -244,8 +244,8 @@ console.log("uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) = "); conso
 **********************************************************************/
 function convertHTML(str) {
 	// Create regex
-	var regex = new RegExp("&|<|>|\"|'");
-
+	// var regex = new RegExp("&|<|>|\"|'");
+	var regex = new RegExp("[&<>\"\']");
 	// Map conversions to object
 	var html = {"&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;"};
 
