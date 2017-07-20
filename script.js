@@ -262,4 +262,4 @@ console.log("convertHTML(\"Sixty > twelve\") = " + convertHTML("Sixty > twelve")
 console.log("convertHTML('Stuff in \"quotation marks\"') = " + convertHTML('Stuff in "quotation marks"'));
 console.log("convertHTML(\"Shindler's List\") = " + convertHTML("Shindler's List"));
 console.log("convertHTML(\"<>\") = " + convertHTML("<>"));
-console.log("convertHTML(\"abc\") = " + convertHTML("abc"))
+console.log("convertHTML(\"abc\") = " + convertHTML("abc"));
