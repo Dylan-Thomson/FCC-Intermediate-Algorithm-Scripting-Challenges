@@ -237,3 +237,29 @@ console.log("uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]) = "); console.log(unit
 console.log("uniteUnique([1, 3, 2], [1, [5]], [2, [4]]) = "); console.log(uniteUnique([1, 3, 2], [1, [5]], [2, [4]]));
 console.log("uniteUnique([1, 2, 3], [5, 2, 1]) = "); console.log(uniteUnique([1, 2, 3], [5, 2, 1]));
 console.log("uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]) = "); console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]));
+
+
+/*********************************************************************	
+	CONVERT HTML ENTITIES
+**********************************************************************/
+function convertHTML(str) {
+	// Create regex
+	var regex = new RegExp("&|<|>|\"|'");
+
+	// Map conversions to object
+	var html = {"&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;"};
+
+	// Find HTML entities using regex and replace using html object and map
+	return str.split("").map(function(char) {
+			return html[char] || char;
+	}).join("");
+}
+
+// Test convertHTML()
+console.log("convertHTML(\"Dolce \& Gabbana\") = " + convertHTML("Dolce & Gabbana"));
+console.log("convertHTML(\"Hamburgers < Pizza < Tacos\") = " + convertHTML("Hamburgers < Pizza < Tacos"));
+console.log("convertHTML(\"Sixty > twelve\") = " + convertHTML("Sixty > twelve"));
+console.log("convertHTML('Stuff in \"quotation marks\"') = " + convertHTML('Stuff in "quotation marks"'));
+console.log("convertHTML(\"Shindler's List\") = " + convertHTML("Shindler's List"));
+console.log("convertHTML(\"<>\") = " + convertHTML("<>"));
+console.log("convertHTML(\"abc\") = " + convertHTML("abc"))
