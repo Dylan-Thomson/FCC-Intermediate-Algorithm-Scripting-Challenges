@@ -177,3 +177,23 @@ console.log("pairElement(\"GCG\") = "); console.log(pairElement("GCG"));
 console.log("pairElement(\"ATCGA\") = "); console.log(pairElement("ATCGA"));
 console.log("pairElement(\"TTGAG\") = ");  console.log(pairElement("TTGAG"));
 console.log("pairElement(\"CTCTA\") = ");  console.log(pairElement("CTCTA"));
+
+
+/*********************************************************************	
+	MISSING LETTERS
+**********************************************************************/
+function fearNotLetter(str) {
+	for(var i = 1; i < str.length; i++) {
+		// If charcode is not 1 larger than previous char, letter is missing
+		if((str[i-1].charCodeAt(0) + 1) !== str[i].charCodeAt(0)) {
+			return String.fromCharCode(str[i-1].charCodeAt(0) + 1);
+		}
+	}
+  return undefined;
+}
+
+// Test fearNotLetter()
+console.log("fearNotLetter(\"abce\") = " + fearNotLetter("abce")); 
+console.log("fearNotLetter(\"abcdefghjklmno\") = " + fearNotLetter("abcdefghjklmno"));
+console.log("fearNotLetter(\"bcd\") = " + fearNotLetter("bcd"));
+console.log("fearNotLetter(\"yz\") = " + fearNotLetter("yz"));
