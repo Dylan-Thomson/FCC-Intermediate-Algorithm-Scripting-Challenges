@@ -263,3 +263,18 @@ console.log("convertHTML('Stuff in \"quotation marks\"') = " + convertHTML('Stuf
 console.log("convertHTML(\"Shindler's List\") = " + convertHTML("Shindler's List"));
 console.log("convertHTML(\"<>\") = " + convertHTML("<>"));
 console.log("convertHTML(\"abc\") = " + convertHTML("abc"));
+
+/*********************************************************************	
+	SPINAL TAP CASE
+**********************************************************************/
+function spinalCase(str) {
+	// Add hyphen when lowercase followed by uppercase, or for whitespace and _
+	return str.replace(/([a-z])([A-Z])|[_|\s]+/g, '$1-$2').toLowerCase();
+}
+
+// Test spinalCase()
+console.log("spinalCase(\"This Is Spinal Tap\") = " + spinalCase("This Is Spinal Tap"));
+console.log("spinalCase(\"thisIsSpinalTap\") = " + spinalCase("thisIsSpinalTap"));
+console.log("spinalCase(\"The_Andy_Griffith_Show\") = " + spinalCase("The_Andy_Griffith_Show"));
+console.log("spinalCase(\"Teletubbies say Eh-oh\") = " + spinalCase("Teletubbies say Eh-oh"));
+console.log("spinalCase(\"AllThe-small Things\") = " + spinalCase("AllThe-small Things"));
