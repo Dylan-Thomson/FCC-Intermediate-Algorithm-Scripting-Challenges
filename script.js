@@ -278,3 +278,32 @@ console.log("spinalCase(\"thisIsSpinalTap\") = " + spinalCase("thisIsSpinalTap")
 console.log("spinalCase(\"The_Andy_Griffith_Show\") = " + spinalCase("The_Andy_Griffith_Show"));
 console.log("spinalCase(\"Teletubbies say Eh-oh\") = " + spinalCase("Teletubbies say Eh-oh"));
 console.log("spinalCase(\"AllThe-small Things\") = " + spinalCase("AllThe-small Things"));
+
+
+/*********************************************************************	
+	SUM ALL ODD FIBONACCI NUMBERS
+**********************************************************************/
+function sumFibs(num) {
+	var fibonaccis = [1];
+	// Push Fibonacci numbers in range into array
+	for(var i = 1; i <= num;) {
+		fibonaccis.push(i);
+		i = fibonaccis[fibonaccis.length - 1] + fibonaccis[fibonaccis.length - 2];
+	}
+	// Return sum of odd Fibonacci numbers in array
+	return fibonaccis.reduce(function(sum, value) {
+		if(value % 2 !== 0) {
+			return sum + value;
+		}
+		return sum;
+	});
+}
+
+// Test sumFibs()
+console.log("sumFibs(4) = " + sumFibs(4));
+console.log("sumFibs(5) = " + sumFibs(5));
+console.log("sumFibs(15) = " + sumFibs(15));
+console.log("sumFibs(1000) = " + sumFibs(1000));
+console.log("sumFibs(4000000) = " + sumFibs(4000000));
+console.log("sumFibs(75024) = " + sumFibs(75024));
+console.log("sumFibs(75025) = " + sumFibs(75025));
