@@ -307,3 +307,34 @@ console.log("sumFibs(1000) = " + sumFibs(1000));
 console.log("sumFibs(4000000) = " + sumFibs(4000000));
 console.log("sumFibs(75024) = " + sumFibs(75024));
 console.log("sumFibs(75025) = " + sumFibs(75025));
+
+
+/*********************************************************************	
+	SUM ALL PRIMES
+**********************************************************************/
+function sumPrimes(num) {
+	// Function to get the primes up to max in an array
+	function getPrimes(max) {
+		var sieve = [];
+		var primes = [];
+		for (var i = 2; i <= max; ++i) {
+			if (!sieve[i]) {
+				// i has not been marked -- it is prime
+				primes.push(i);
+				for (var j = i << 1; j <= max; j += i) {
+					sieve[j] = true;
+				}
+			}
+		}
+		return primes;
+	}
+
+	// Add the primes
+	return getPrimes(num).reduce(function(sum, prime) {
+		return sum + prime;
+	});
+}
+
+// Test sumPrimes()
+console.log("sumPrimes(10) = " + sumPrimes(10));
+console.log("sumPrimes(977) = " + sumPrimes(977));
