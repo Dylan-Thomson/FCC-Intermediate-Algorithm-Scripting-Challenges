@@ -338,3 +338,39 @@ function sumPrimes(num) {
 // Test sumPrimes()
 console.log("sumPrimes(10) = " + sumPrimes(10));
 console.log("sumPrimes(977) = " + sumPrimes(977));
+
+
+/*********************************************************************	
+	SMALLEST COMMON MULTIPLE
+**********************************************************************/
+function smallestCommons(arr) {
+	var max = Math.max(arr[0], arr[1]);
+	var min = Math.min(arr[0], arr[1]);
+	var lcm;
+
+	for(var i = min; i < max; i++) {
+		if(i === min) {
+			lcm = (i * (i+1))/gcd(i, i+1);
+		}
+		else {
+			lcm = (lcm * (i+1))/gcd(lcm, i+1);
+		}
+	}
+
+	return lcm;
+
+	// Euclidian Algorithm
+	function gcd(a, b) {
+		if (b === 0)
+				return a;
+		else
+				return gcd(b, a%b);
+	}	
+}
+
+// Test smallestCommons
+console.log("smallestCommons([1,3]) = " + smallestCommons([1,3]));
+console.log("smallestCommons([5,3]) = " + smallestCommons([5,3]));
+console.log("smallestCommons([1,5]) = " + smallestCommons([1,5]));
+console.log("smallestCommons([1, 13]) = " + smallestCommons([1, 13]));
+console.log("smallestCommons([23, 18]) = " + smallestCommons([23, 18]));
