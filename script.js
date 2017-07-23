@@ -356,7 +356,6 @@ function smallestCommons(arr) {
 			lcm = (lcm * (i+1))/gcd(lcm, i+1);
 		}
 	}
-
 	return lcm;
 
 	// Euclidian Algorithm
@@ -374,3 +373,17 @@ console.log("smallestCommons([5,3]) = " + smallestCommons([5,3]));
 console.log("smallestCommons([1,5]) = " + smallestCommons([1,5]));
 console.log("smallestCommons([1, 13]) = " + smallestCommons([1, 13]));
 console.log("smallestCommons([23, 18]) = " + smallestCommons([23, 18]));
+
+/*********************************************************************	
+	FINDERS KEEPERS
+**********************************************************************/
+function findElement(arr, func) {
+	arr = arr.filter(func);
+	return arr[0];
+}
+
+// Test findElement()
+console.log("findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; }) = " + findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; }));
+console.log("findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }) = " + findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }));
+console.log("findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }) = " + findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }));
+findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
