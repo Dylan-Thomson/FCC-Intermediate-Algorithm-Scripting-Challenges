@@ -416,7 +416,7 @@ function steamrollArray(arr) {
 	var result = [];
 	flatten(arr);
 	return result;
-	
+
 	function flatten(element) {
 		if(Array.isArray(element)) {
 			element.forEach(function(element) {
@@ -427,6 +427,10 @@ function steamrollArray(arr) {
 			result.push(element);
 		}
 	}
+
+	// Shorter solution
+	// let flat = [].concat(...arr);
+	// return flat.some(Array.isArray) ? steamrollArray(flat) : flat;
 }
 
 // Test steamrollArray()
