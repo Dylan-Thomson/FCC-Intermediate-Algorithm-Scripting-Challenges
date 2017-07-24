@@ -401,8 +401,37 @@ function dropElements(arr, func) {
 
 // Test dropElements()
 console.log("dropElements([1, 2, 3, 4], function(n) {return n >= 3;}) = " + dropElements([1, 2, 3, 4], function(n) {return n >= 3;}));
-console.log("dropElements([0, 1, 0, 1], function(n) {return n === 1;}) = "  + dropElements([0, 1, 0, 1], function(n) {return n === 1;}));
+console.log("dropElements([0, 1, 0, 1], function(n) {return n === 1;}) = " + dropElements([0, 1, 0, 1], function(n) {return n === 1;}));
 console.log("dropElements([1, 2, 3], function(n) {return n > 0;}) = " + dropElements([1, 2, 3], function(n) {return n > 0;}));
 console.log("dropElements([1, 2, 3, 4], function(n) {return n > 5;}) = " + dropElements([1, 2, 3, 4], function(n) {return n > 5;}));
 console.log("dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}) = " + dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}));
 console.log("dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}) = " + dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}));
+
+
+
+/*********************************************************************	
+	STEAMROLLER
+**********************************************************************/
+function steamrollArray(arr) {
+	var result = [];
+	flatten(arr);
+	return result;
+	
+	function flatten(element) {
+		if(Array.isArray(element)) {
+			element.forEach(function(element) {
+				flatten(element);
+			});
+		}
+		else {
+			result.push(element);
+		}
+	}
+}
+
+// Test steamrollArray()
+console.log("steamrollArray([[[\"a\"]], [[\"b\"]]]) = "); console.log(steamrollArray([[["a"]], [["b"]]]));
+console.log("steamrollArray([1, [2], [3, [[4]]]]) = "); console.log(steamrollArray([1, [2], [3, [[4]]]]));
+console.log("steamrollArray([1, [], [3, [[4]]]]) = "); console.log(steamrollArray([1, [], [3, [[4]]]]));
+console.log("steamrollArray([1, {}, [3, [[4]]]]) = "); console.log(steamrollArray([1, {}, [3, [[4]]]]));
+steamrollArray([1, [2], [3, [[4]]]]);
