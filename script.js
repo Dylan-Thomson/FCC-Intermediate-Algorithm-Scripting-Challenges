@@ -387,3 +387,22 @@ console.log("findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; }) =
 console.log("findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }) = " + findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }));
 console.log("findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }) = " + findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }));
 findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
+
+
+/*********************************************************************	
+	DROP IT
+**********************************************************************/
+function dropElements(arr, func) {
+	while(arr.length > 0 && !func(arr[0])) {
+		arr.shift();
+	}
+	return arr;
+}
+
+// Test dropElements()
+console.log("dropElements([1, 2, 3, 4], function(n) {return n >= 3;}) = " + dropElements([1, 2, 3, 4], function(n) {return n >= 3;}));
+console.log("dropElements([0, 1, 0, 1], function(n) {return n === 1;}) = "  + dropElements([0, 1, 0, 1], function(n) {return n === 1;}));
+console.log("dropElements([1, 2, 3], function(n) {return n > 0;}) = " + dropElements([1, 2, 3], function(n) {return n > 0;}));
+console.log("dropElements([1, 2, 3, 4], function(n) {return n > 5;}) = " + dropElements([1, 2, 3, 4], function(n) {return n > 5;}));
+console.log("dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}) = " + dropElements([1, 2, 3, 7, 4], function(n) {return n > 3;}));
+console.log("dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}) = " + dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}));
