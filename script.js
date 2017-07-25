@@ -461,7 +461,37 @@ function truthCheck(collection, pre) {
 	});
 }
 
+// Test truthCheck()
 console.log("truthCheck([{\"user\": \"Tinky-Winky\", \"sex\": \"male\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\") = " +
 						truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
 console.log("truthCheck([{\"user\": \"Tinky-Winky\"}, {\"user\": \"Dipsy\", \"sex\": \"male\"}, {\"user\": \"Laa-Laa\", \"sex\": \"female\"}, {\"user\": \"Po\", \"sex\": \"female\"}], \"sex\") = " +
 						truthCheck([{"user": "Tinky-Winky"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
+
+
+/*********************************************************************	
+	ARGUMENTS OPTIONAL
+**********************************************************************/
+function addTogether() {
+	var args = Array.from(arguments);
+	if(!args.every(function(element) { return Number.isInteger(element); })) {
+		return undefined;
+	} 
+	if(args.length === 2) {
+		return args.reduce(function(sum, value) {
+			return sum + value;
+		});
+	}
+	if(args.length === 1) {
+		return function(y) {
+			if(!Number.isInteger(y)) return undefined;
+			return args[0] + y;
+		};
+	}
+}
+
+// Test addTogether()
+console.log("addTogether(2, 3) = " + addTogether(2, 3));
+console.log("addTogether(2)(3) = " + addTogether(2)(3));
+console.log("addTogether(\"http://bit.ly/IqT6zt\") = " + addTogether("http://bit.ly/IqT6zt"));
+console.log("addTogether(2, \"3\") = " + addTogether(2, "3"));
+console.log("addTogether(2)([3]) = " + addTogether(2)([3]));
